@@ -1,3 +1,59 @@
 body {
 	background-color: white;
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+}
+.upper-nav {
+	border: 1px solid black;
+	height: 10%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.un-1 {
+	background-color: red;
+	height: 20px;
+	padding: 10px;
+	align-content: center;
+}
+
+.un-2 {
+	height: 30px;
+	background-color: blue;
+}
+
+.main {
+	/* background-color: aquamarine; */
+	flex-grow: 9;
+}
+
+.footer-nav {
+	background-color: rgb(242,242,242);
+	
+	min-height: 20%;
+	
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.footer-nav-1 {
+	border: 1px solid rgb(218,220,224);
+	flex-grow: 1;
+}
+.footer-nav-2 {
+	border: 1px solid rgb(218,220,224);
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-grow: 1;
+}
+.footer-nav-2 div {
+	min-width: 400px; /* maybe we should modify this */
+
 }
