@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<h1>
+		THE TITLE OF YOUR WEBPAGE
+	</h1>
+	<div id="container">
+		<div class="content">
+			This is the glorious text-content!
+		</div>
+	</div>
+	<script>
+		let theDiv = document.querySelector('#container');
+
+		let newParagraph = document.createElement('p');
+		newParagraph.style.color = 'red';
+		let ptext = document.createTextNode("Hey I’m red!");
+		newParagraph.appendChild(ptext);
+		theDiv.appendChild(newParagraph);
+
+		let newHeading = document.createElement('h3');
+		newHeading.style.color = 'blue';
+		newHeading.textContent = "I’m a blue h3!";
+		theDiv.appendChild(newHeading);
+
+		let newDiv =document.createElement('div');
+		newDiv.style.border = '1px solid black';
+		newDiv.style.backgroundColor = 'pink';
+
+		let insidH1 =document.createElement('h1');
+		insidH1.innerText = "I'm in a div";
+
+		let insidp =document.createElement('p');
+		insidp.innerText = "ME TOO!";
+
+		let insidBtn =document.createElement('button');
+		insidBtn.textContent = 'click me to change color';
+		insidBtn.addEventListener('click', function (e) {
+			console.log(e.target);
+			e.target.style.backgroundColor = 'red';
+		});
+
+		newDiv.appendChild(insidH1);
+		newDiv.appendChild(insidp);
+		newDiv.appendChild(insidBtn);
+		theDiv.appendChild(newDiv);
+
+	</script>
+</body>
+
+</html>
