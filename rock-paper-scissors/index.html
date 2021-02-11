@@ -3,118 +3,48 @@
 
 <head>
 	<meta charset="UTF-8">
+	<title>Rock Paper Scissors</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+	<main>
+		<h1>Rock Paper Scissors</h1>
+		<div id="buttons">
+			<div id="1">
+				<img class="rock" src="./rock.png" alt="rock">
+			</div>
+			<div id="2">
+				<img class="scissors" src="./scissors.png" alt="" srcset="">
+			</div>
+			<div id="3">
+				<img class="paper" src="./hand.svg" alt="" srcset="">
+			</div>
+		</div>
+		<div id="output">
+			<div class="score-names">
+				<spane>You.</spane>
+				<span><b>     VS     </b></span>
+				<span>Dumb computer.</p></span>
+			</div>
+			<div class="result-container">
+				<div class="round-result-div">
+					Play a Round first!
+				</div>
+				<div class="final-result-div">
+					1 - 2
+				</div>
+			</div>
 
-	<script>
-		function computerPlay() {
-			let move = ['Rock', 'paper', 'Scissors'];
-			let i = Math.floor(Math.random() * 10 % 3);
-			// return ('rock');
-			// console.log(`i : ${i}`)
-			// console.log(`move : ${move}`)
-			// console.log(`move[i] : ${move[i]}`)
-			return (move[i]);
-		}
 
-		function playRound(playerSelection1, computerSelection1) {
-			let winner = 0;
-			let playerSelection = playerSelection1.toLowerCase();
-			let computerSelection = computerSelection1.toLowerCase();
-			console.log(`computer selection is : ${computerSelection}`);
-			console.log(`player selection is : ${playerSelection}`);
-			switch (playerSelection) {
-				case 'rock': {
-					switch (computerSelection) {
-						case 'rock':
-							winner = 0;
-							break;
-						case 'paper':
-							{
-								winner = -1;
-								break;
-							}
-						case 'scissors': {
-							winner = 1;
-							break;
-						}
-						default:
-							break;
-					}
-					break;
-				}
-				case 'paper': {
-					switch (computerSelection) {
-						case 'rock': {
-							winner = 1;
-							break;
-						}
-						case 'paper': {
-							winner = 0;
-							break;
-						}
-						case 'scissors': {
-							winner = -1;
-							break;
-						}
-						default:
-							break;
-					}
-					break;
-				}
-				case 'scissors': {
-					switch (computerSelection) {
-						case 'rock':
-							winner = -1;
-							break;
-						case 'paper':
-							winner = 1;
-							break;
-						case 'scissors':
-							winner = 0;
-							break;
-						default:
-							break;
-					}
-					break;
-				}
-			}
-			console.log(winner);
-			return (winner);
-		}
-		function game() {
-			let me = 0;
-			let computer = 0;
-			for (let index = 0; index < 5; index++) {
-				const computerSelection = computerPlay();
-				const playerSelection = window.prompt('write you choice', 'rock');
-				playerSelection.toLowerCase();
-				if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors')
-					console.log("good input: " + playerSelection);
-				else {
-					console.log("bad input: " + playerSelection);
-				}
-				let winner = playRound(playerSelection, computerSelection);
-				if (winner == 1) {
-					me++;
-					console.log(`"You win! ${playerSelection} beats ${computerSelection}"`);
-				} else if (winner == -1) {
-					computer++;
-					console.log(`"You Lose! ${computerSelection} beats ${playerSelection}"`);
-				} else {
-					index--;
-					console.log(`It's a Draw!`);
-				}
-			}
-			console.log(`the final result (YOU vs DUMP_COMPUTER): ${me} vs ${computer}`);
-		}
-		game();
-		console.log("exec end");
-	</script>
-
+		</div>
+	</main>
+	<script src="./javascript.js"></script>
+	<footer>
+		<h2>the footer.</h2>
+	</footer>
 </body>
 
 </html>

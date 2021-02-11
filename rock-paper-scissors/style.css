@@ -1,0 +1,107 @@
+html {
+	background: url('background.jpg') bottom center;
+	background-size: cover;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+h1 {
+	margin-top: 120px;
+	color: white;
+	display: flex;
+	font-weight: 600;
+	font-size: 50px;
+	justify-content: center;
+}
+
+#buttons {
+	margin-top: 250px;
+	/* background: white; */
+	display: flex;
+	justify-content: space-around;
+}
+
+#buttons div {
+	background: rgba(240, 46, 170, 0.1);
+	border-radius: 10px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	min-width:  150px;
+	min-height: 150px;
+	transition: all .07s ease;
+	background-attachment: rgba(0, 0, 0, 0.4);
+	box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+				rgba(240, 46, 170, 0.3) -10px 10px, 
+				rgba(240, 46, 170, 0.2) -15px 15px, 
+				rgba(240, 46, 170, 0.1) -20px 20px, 
+				rgba(240, 46, 170, 0.05) -25px 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rock, .paper, .scissors{
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.highlight {
+	transform: scale(1.1);
+	border-color: #ffc600;
+	box-shadow: 0 0 1rem #ffc600;
+}
+
+#output {
+	position: relative;
+	box-sizing: border-box;
+	background: rgba(177, 177, 177, 0.329);
+	margin: 20px;
+	margin-top: 50px;
+	height: 300px;
+	width: 100% - margin;
+	padding: 10px;
+	padding-top: 5px;
+	border-radius: 10px;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.score-names {
+	padding: 20px;
+	font-size: xx-large;
+	font-family: 'First Job', Geneva, Tahoma, sans-serif;
+	display: flex;
+	justify-content: space-evenly;
+	min-width: 100%;
+}
+
+.result-container {
+	display: flex;
+	justify-content: space-between;
+}
+.round-result-div {
+	border: 1px solid black;
+	min-width: 50%;
+	height: 50px;
+
+	font-size: 30px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.final-result-div {
+	border: 1px solid black;
+	min-width: 50%;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
