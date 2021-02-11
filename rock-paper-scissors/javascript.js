@@ -96,10 +96,19 @@ function displayWinner(currRoundWinner, myScore, computerScore) {
 /* ----------------------------------------------------------------- */
 
 function displayCurrRoundWinner(params) {
-	let name = (params === 1) ? 'You' : 'Dump Computer';
-	let resultString = `this round resoult: YAAY ${name} Won.`;
 	let div = document.querySelector('.round-result-div');
-	div.textContent = resultString;	
+	let para1 = document.createElement('p');
+	let para2 = document.createElement('p');
+	let name = (params === 1) ? 'You' : 'Dump Computer';
+	
+	para1.textContent = "Curr Round winner";
+	para2.textContent = `${name}`;
+
+	console.log(div.innerHTML);
+	div.remove();
+	// div.removeChild(text);
+	// div.appendChild(para1);
+	// div.appendChild(para2);
 
 }
 
