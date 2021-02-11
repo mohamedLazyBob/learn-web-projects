@@ -100,22 +100,58 @@ function displayCurrRoundWinner(params) {
 	let para1 = document.createElement('p');
 	let para2 = document.createElement('p');
 	let name = (params === 1) ? 'You' : 'Dump Computer';
-	
+
 	para1.textContent = "Curr Round winner";
 	para2.textContent = `${name}`;
 
-	console.log(div.innerHTML);
-	div.remove();
-	// div.removeChild(text);
-	// div.appendChild(para1);
-	// div.appendChild(para2);
+	div.innerHTML = '';
+	// console.log(div.innerHTML);`
+	div.appendChild(para1);
+	div.appendChild(para2);
 
 }
 
 /* ----------------------------------------------------------------- */
 
-function showFinaleResult(params) {
-	// some magic animation here.
+function showFinaleResult() {
+
+	// clear the bloc
+	const blocDiv = document.querySelector('.result-container');
+	const namesDiv = document.querySelector('.score-names');
+	blocDiv.innerHTML = '';
+	namesDiv.innerHTML = '';
+	// add win animation
+	blocDiv.innerHTML = `
+			<div class="gameOver-container">
+				<img src="./imgs/tenor.gif" alt="Game Over">
+				<button class="retryBtn">retry</button>
+				<div class="result-board"></div>
+			</div>
+	`;
+	const win = myScore === 5 ? 'You' : 'Dumb computer';
+	const resDiv = document.querySelector('.result-board');
+	resDiv.innerHTML = `
+		<p> ${win} Won </p>
+	`;
+	// add retray button
+	const retryBtn = document.querySelector('.retryBtn');
+	retryBtn.addEventListener('click', () => {
+		namesDiv.innerHTML = `
+				<spane>You.</spane>
+				<span>     VS     </span>
+				<span>Dumb computer.</span>
+		`;
+		blocDiv.innerHTML = `
+				<div class="round-result-div">
+					Play a Round first!
+				</div>
+				<div class="final-result-div">
+					0 - 0
+				</div>
+		`;	
+		myScore = 0;
+		computerScore = 0;
+	});
 }
 
 /* ----------------------------------------------------------------- */
@@ -132,7 +168,7 @@ function game(btn) {
 	}
 
 	if (myScore === 5 || computerScore === 5) {
-		showFinaleResult(myScore, computerScore);
+		showFinaleResult();
 	} else {
 		displayCurrRoundWinner(currRoundWinner);
 		displayWinner(currRoundWinner, myScore, computerScore);

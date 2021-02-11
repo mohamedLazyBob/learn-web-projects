@@ -1,5 +1,5 @@
 html {
-	background: url('background.jpg') bottom center;
+	background: url('./imgs/background.jpg') bottom center;
 	background-size: cover;
 }
 
@@ -9,6 +9,13 @@ body, html {
 	font-family: sans-serif;
 }
 
+main {
+	max-width: 70%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 h1 {
 	margin-top: 120px;
 	color: white;
@@ -19,7 +26,7 @@ h1 {
 }
 
 #buttons {
-	margin-top: 250px;
+	/* margin-top: 250px; */
 	/* background: white; */
 	display: flex;
 	justify-content: space-around;
@@ -61,18 +68,28 @@ h1 {
 	background: rgba(177, 177, 177, 0.329);
 	margin: 20px;
 	margin-top: 50px;
-	height: 300px;
+	/* height: 300px; */
 	width: 100% - margin;
 	padding: 10px;
-	padding-top: 5px;
+	/* padding-top: 5px; */
 	border-radius: 10px;
 	text-align: center;
 
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 }
 
+/* 
+
+* {
+	border: 1px solid red;
+}
+ */
+
+
 .score-names {
+	box-sizing: border-box;
 	padding: 20px;
 	font-size: xx-large;
 	font-family: 'First Job', Geneva, Tahoma, sans-serif;
@@ -82,26 +99,72 @@ h1 {
 }
 
 .result-container {
+	/* border: 1px solid red; */
 	display: flex;
 	justify-content: space-between;
+	/* flex-direction: column; */
+	height: auto;
 }
 .round-result-div {
-	border: 1px solid black;
-	min-width: 50%;
+	/* border: 1px solid green; */
+	width: 50%;
 	height: 100px;
 
 	font-size: 30px;
 
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
+.round-result-div p {
+	margin: 0;
+	margin-bottom: 5px;
+}
 
 .final-result-div {
-	border: 1px solid black;
-	min-width: 50%;
+	/* border: 1px solid black; */
+	width: 50%;
 	font-size: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+
+.gameOver-container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	/* border: 1px solid red; */
+}
+.gameOver-container img {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.gameOver-container button {
+	width: 100px;
+	height: 50px;
+	border-radius: 55px;
+	border: 0;
+	
+	position: absolute;
+	bottom: 10px;
+	left: calc(50% - 50px);
+}
+
+.result-board {
+	background: rgba(0, 0, 0, .2);
+	position: absolute;
+	width: 100%; 	
+	left: calc(50% - width);
+	bottom: 60px;
+	font-weight: bold;
+	font-size: 50px;
+	text-shadow: -3px 3px white, 
+				 3px -3px white,
+				 3px 3px white,
+				 -3px -3px white;
 }
